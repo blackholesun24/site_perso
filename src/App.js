@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-import {Contact, Landing} from './pages';
+import {Contact, Landing, Signup} from './pages';
 import Navbar from './components/Navbar';
  
 export default class App extends Component{
@@ -12,17 +12,16 @@ export default class App extends Component{
 
     render(){
         return(
-            <Fragment>
-                <Navbar />
-                <Router>
+            <Router>
+                    <Fragment>
+                    <Navbar />
                     <Switch>
                         <Route exact path='/' component={Landing} />
                         <Route path='/contact' component={Contact} />
+                        <Route path='/inscription' component={Signup} />
                     </Switch>
-                </Router>
-            </Fragment>
+                </Fragment>
+            </Router>
         );
     }
-
 }
-
